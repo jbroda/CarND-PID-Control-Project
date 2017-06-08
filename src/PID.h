@@ -10,6 +10,8 @@ public:
   double i_error;
   double d_error;
 
+  double totalError;
+
   /*
   * Coefficients
   */ 
@@ -41,6 +43,13 @@ public:
   * Calculate the total PID error.
   */
   double TotalError();
+
+  double SteeringValue();
+
+  void ResetError() 
+  {
+	d_error = i_error = p_error = totalError = 0;
+  }
 };
 
 #endif /* PID_H */
